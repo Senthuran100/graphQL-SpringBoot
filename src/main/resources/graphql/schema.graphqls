@@ -1,0 +1,16 @@
+schema {
+    query: Query
+}
+
+type Query{
+    getAllUsers:[User]
+}
+
+
+type User {
+    userId : ID!,
+    firstName :String,
+    lastName :String,
+    address:String,
+    postId : Int,
+}
