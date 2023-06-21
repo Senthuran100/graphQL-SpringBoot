@@ -22,17 +22,17 @@ public class DataLoader {
     private UserRepository userRepository;
 
     @PostConstruct
-    public void loadData(){
-        User user1 = new User("David" ,"John","XX YY ZZ");
-        User user2 = new User("Mike" ,"Hussey","PP QQ RR");
-        User user3 = new User("Paul" ,"Henry","AA BB CC");
+    public void loadData() {
+        User user1 = new User("David", "John", "XX YY ZZ");
+        User user2 = new User("Mike", "Hussey", "PP QQ RR");
+        User user3 = new User("Paul", "Henry", "AA BB CC");
 
-        Post post1 = new Post("SpringBoot",new Date());
-        Post post2 = new Post("Environment Pollution",new Date());
-        Post post3 = new Post("World",new Date());
+        Post post1 = new Post("SpringBoot", new Date());
+        Post post2 = new Post("Environment Pollution", new Date());
+        Post post3 = new Post("World", new Date());
         Post post4 = new Post("React Native", new Date());
 
-        user1.setPost(List.of(post1,post4));
+        user1.setPost(List.of(post1, post4));
         user2.setPost(Collections.singletonList(post2));
         user3.setPost(Collections.singletonList(post3));
 
@@ -40,8 +40,5 @@ public class DataLoader {
         userRepository.save(user2);
         userRepository.save(user3);
 
-//        postRepository.save(post1);
-//        postRepository.save(post2);
-//        postRepository.save(post3);
     }
 }

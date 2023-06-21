@@ -23,13 +23,13 @@ public class UserPostController {
         this.userMutationService = userMutationService;
     }
 
-    @SchemaMapping(typeName = "Query",value = "getAllUsers")
+    @SchemaMapping(typeName = "Query", value = "getAllUsers")
     public List<User> findAll() {
         return userService.getAllUsers();
     }
 
     @MutationMapping
-    public User addUser(@Argument String firstName,@Argument String lastName,@Argument String address) {
+    public User addUser(@Argument String firstName, @Argument String lastName, @Argument String address) {
         return userMutationService.addUser(firstName, lastName, address);
     }
 
@@ -40,6 +40,6 @@ public class UserPostController {
 
     @MutationMapping
     public Post addPost(@Argument String postName, @Argument Integer userId) {
-        return userMutationService.addPost(postName,userId);
+        return userMutationService.addPost(postName, userId);
     }
 }

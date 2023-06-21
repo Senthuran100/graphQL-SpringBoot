@@ -24,13 +24,13 @@ public class UserPostMutationService implements GraphQLMutationResolver {
 
     public User addUser(String firstname, String lastname, String address) {
         log.info("Adding a User record");
-        User user = new User(firstname,lastname,address);
+        User user = new User(firstname, lastname, address);
         return userRepository.save(user);
     }
 
     public Post addPost(String postName, int userId) {
-        log.info("Adding a Post record by userId : {}",userId);
-        User user = userRepository.findById(userId).orElseThrow(()-> new UserNotFoundException(userId));
+        log.info("Adding a Post record by userId : {}", userId);
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException(userId));
         Post post = new Post(postName, new Date());
         user.getPost().add(post);
         userRepository.save(user);

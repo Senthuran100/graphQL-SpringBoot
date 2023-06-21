@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableEncryptableProperties
 public class TryOutGrpahQlApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(TryOutGrpahQlApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TryOutGrpahQlApplication.class, args);
+    }
 
 }

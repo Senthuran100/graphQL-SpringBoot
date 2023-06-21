@@ -23,8 +23,8 @@ public class UserQueryService implements GraphQLQueryResolver {
     }
 
     public User getUserById(int id) {
-        log.info("Getting user post details for id : {}",id);
-        return userRepository.findById(id).orElseThrow(()-> new UserNotFoundException(id));
+        log.info("Getting user post details for id : {}", id);
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
     }
 
 }
