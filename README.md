@@ -8,3 +8,37 @@ Get All the users.
 
 ![img.png](img.png)
 
+`query{
+getAllUsers{
+userId
+firstName
+lastName
+address
+post {
+postName
+postId
+    }
+}
+}`
+
+`mutation{
+addUser (
+firstName: "Hello",
+lastName: "Kent",
+address:"Sydney"
+) {
+userId
+firstName
+}
+}`
+
+`query{
+getUserById (userId:100){
+firstName
+post {
+postId
+postName
+}
+}
+}`
+
