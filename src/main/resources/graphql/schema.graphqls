@@ -1,16 +1,25 @@
+
 schema {
     query: Query
 }
 
-type Query{
+type Query {
     getAllUsers:[User]
 }
 
+type Mutation {
+   addUser(firstName: String!, lastName: String!, address: String): User!
+}
 
 type User {
     userId : ID!,
     firstName :String,
     lastName :String,
     address:String,
-    postId : Int,
+    post: [Post],
+}
+
+type Post {
+    postId: ID!,
+    postName : String,
 }
