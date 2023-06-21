@@ -6,11 +6,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "USER")
+@Table(name = "user")
 public class User {
 
     @Id
@@ -27,14 +30,14 @@ public class User {
     @Column(name = "ADDRESS")
     private String address;
 
-    @Column(name = "POST_ID")
-    private Integer postId;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "up_fid", referencedColumnName = "USER_ID")
+    List<Post> post = new ArrayList<>();
 
-    public User(String firstName, String lastName, String address, Integer postId) {
+    public User(String firstName, String lastName, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.postId = postId;
     }
 }
 
