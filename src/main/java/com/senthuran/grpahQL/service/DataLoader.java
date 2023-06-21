@@ -40,12 +40,8 @@ public class DataLoader {
         userRepository.save(user2);
         userRepository.save(user3);
 
-        postRepository.save(post1);
-        postRepository.save(post2);
-        postRepository.save(post3);
-
-        userRepository.save(user1);
-        userRepository.save(user2);
-        userRepository.save(user3);
+//        postRepository.save(post1);
+//        postRepository.save(post2);
+//        postRepository.save(post3);
     }
 }

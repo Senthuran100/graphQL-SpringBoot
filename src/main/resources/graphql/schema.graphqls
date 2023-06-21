@@ -10,6 +10,7 @@ type Query {
 
 type Mutation {
    addUser(firstName: String!, lastName: String!, address: String): User!
+   addPost(postName:String!,userId: ID!): Post
 }
 
 type User {
