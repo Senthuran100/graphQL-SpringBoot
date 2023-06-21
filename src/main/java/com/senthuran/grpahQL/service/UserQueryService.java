@@ -1,6 +1,7 @@
 package com.senthuran.grpahQL.service;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import com.senthuran.grpahQL.exception.UserNotFoundException;
 import com.senthuran.grpahQL.model.User;
 import com.senthuran.grpahQL.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -21,9 +23,9 @@ public class UserQueryService implements GraphQLQueryResolver {
         return userRepository.findAll();
     }
 
-//    public UserPost getUserPost(int id) {
-//        log.info("Getting user post details for id : {}",id);
-//
-//    }
+    public User getUserById(int id) {
+        log.info("Getting user post details for id : {}",id);
+        return userRepository.findById(id).orElseThrow(()-> new UserNotFoundException(id));
+    }
 
 }

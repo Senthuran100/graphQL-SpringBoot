@@ -16,6 +16,7 @@ public class UserMutationService implements GraphQLMutationResolver {
     }
 
     public User addUser(String firstname, String lastname, String address) {
+        log.info("Adding a User record");
         User user = new User(firstname,lastname,address);
         return userRepository.save(user);
     }
