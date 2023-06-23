@@ -1,7 +1,7 @@
 import './App.css';
 import Layout from "./Components/Layout";
 import AllUsers from "./Components/AllUsers";
-import { Route, Routes } from "react-router-dom";
+import AddUser from "./Components/AddUser";
 
 function App() {
 
@@ -9,10 +9,8 @@ function App() {
     // <div className="App">
     //   <header className="App-header">
     <Layout>
-      <Routes>
-        <Route path="/" element={<AllUsers />}></Route>
-        {/* <Route path="/add-toy" element={<AddUser />}></Route> */}
-      </Routes>
+      <AllUsers />
+      <AddUser/>
     </Layout>
     //   </header>
     // </div>

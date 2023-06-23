@@ -7,11 +7,17 @@ export const GET_AllUsers = gql`
         firstName
         lastName
         address
-             post {
-          postName
-          postId
-          
-        }
       }
+  }
+`;
+
+export const CREATE_NewUser = gql`
+  mutation ($firstName: String!, $lastName: String!, $address: String) {
+    addUser(firstName: $firstName, lastName: $lastName, address: $address) {
+      userId
+      firstName
+      address
+      lastName
+    }
   }
 `;
